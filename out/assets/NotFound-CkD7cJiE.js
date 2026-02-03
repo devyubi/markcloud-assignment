@@ -1,0 +1,2 @@
+import{j as t}from"./index-X4rfO8ph.js";function x(){return t.jsxs("div",{className:"flex flex-col items-center justify-center h-screen text-center px-4",children:[t.jsx("h1",{className:"text-5xl md:text-5xl font-semibold text-gray-100",children:"404"}),t.jsx("h1",{className:"text-2xl md:text-3xl font-semibold mt-6",children:"잘못된 접근입니다."}),t.jsx("p",{className:"mt-4 text-xl md:text-2xl text-gray-500",children:"다시 시도해주세요."})]})}export{x as default};
+//# sourceMappingURL=NotFound-CkD7cJiE.js.map
