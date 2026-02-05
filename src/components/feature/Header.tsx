@@ -1,24 +1,27 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { Country } from '../../types/trademark';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { Country } from "../../types/trademark";
 
 interface HeaderProps {
   selectedCountry: Country;
   onCountryChange: (country: Country) => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ selectedCountry, onCountryChange }) => {
+export const Header: React.FC<HeaderProps> = ({
+  selectedCountry,
+  onCountryChange,
+}) => {
   const { t, i18n } = useTranslation();
 
   const languages = [
-    { code: 'ko', label: t('lang.ko') },
-    { code: 'en', label: t('lang.en') },
-    { code: 'zh', label: t('lang.zh') },
+    { code: "ko", label: t("lang.ko") },
+    { code: "en", label: t("lang.en") },
+    { code: "zh", label: t("lang.zh") },
   ];
 
   const countries: { code: Country; label: string }[] = [
-    { code: 'korea', label: t('country.korea') },
-    { code: 'us', label: t('country.us') },
+    { code: "korea", label: t("country.korea") },
+    { code: "us", label: t("country.us") },
   ];
 
   return (
@@ -29,22 +32,35 @@ export const Header: React.FC<HeaderProps> = ({ selectedCountry, onCountryChange
             <div className="w-8 h-8 flex items-center justify-center">
               <i className="ri-trademark-line text-2xl text-slate-900"></i>
             </div>
-            <h1 className="text-xl font-bold text-slate-900">{t('header.title')}</h1>
+            <h1 className="font-bold text-slate-900 whitespace-nowrap">
+              {/* Desktop */}
+              <span className="hidden md:inline text-xl">
+                {t("header.title")}
+              </span>
+
+              {/* Mobile */}
+              <span className="inline md:hidden text-lg tracking-wide">
+                {t("header.titleShort")}
+              </span>
+            </h1>
+            {/* <h1 className="text-xl font-bold text-slate-900">{t('header.title')}</h1> */}
           </div>
 
           <div className="flex items-center space-x-6">
             {/* Country Selector */}
             <div className="flex items-center space-x-2">
-              <span className="text-sm text-slate-600 hidden sm:inline">{t('header.country')}</span>
+              <span className="text-sm text-slate-600 hidden sm:inline">
+                {t("header.country")}
+              </span>
               <div className="flex bg-slate-100 rounded-lg p-1">
-                {countries.map(country => (
+                {countries.map((country) => (
                   <button
                     key={country.code}
                     onClick={() => onCountryChange(country.code)}
                     className={`px-3 py-1 text-sm font-medium rounded-md transition-all whitespace-nowrap cursor-pointer ${
                       selectedCountry === country.code
-                        ? 'bg-white text-slate-900 shadow-sm'
-                        : 'text-slate-600 hover:text-slate-900'
+                        ? "bg-white text-slate-900 shadow-sm"
+                        : "text-slate-600 hover:text-slate-900"
                     }`}
                   >
                     {country.label}
@@ -55,16 +71,18 @@ export const Header: React.FC<HeaderProps> = ({ selectedCountry, onCountryChange
 
             {/* Language Selector */}
             <div className="flex items-center space-x-2">
-              <span className="text-sm text-slate-600 hidden sm:inline">{t('header.language')}</span>
+              <span className="text-sm text-slate-600 hidden sm:inline">
+                {t("header.language")}
+              </span>
               <div className="flex bg-slate-100 rounded-lg p-1">
-                {languages.map(lang => (
+                {languages.map((lang) => (
                   <button
                     key={lang.code}
                     onClick={() => i18n.changeLanguage(lang.code)}
                     className={`px-3 py-1 text-sm font-medium rounded-md transition-all whitespace-nowrap cursor-pointer ${
                       i18n.language === lang.code
-                        ? 'bg-white text-slate-900 shadow-sm'
-                        : 'text-slate-600 hover:text-slate-900'
+                        ? "bg-white text-slate-900 shadow-sm"
+                        : "text-slate-600 hover:text-slate-900"
                     }`}
                   >
                     {lang.label}
@@ -81,7 +99,9 @@ export const Header: React.FC<HeaderProps> = ({ selectedCountry, onCountryChange
               <div className="w-5 h-5 flex items-center justify-center">
                 <i className="ri-heart-line text-lg"></i>
               </div>
-              <span className="text-sm font-medium hidden md:inline">{t('favorites.title')}</span>
+              <span className="text-sm font-medium hidden md:inline">
+                {t("favorites.title")}
+              </span>
             </a>
           </div>
         </div>

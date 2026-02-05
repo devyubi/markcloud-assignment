@@ -1,18 +1,19 @@
 export default {
   // Header
   "header.title": "Global Trademark Search",
+  "header.titleShort": "GTS",
   "header.language": "Language",
   "header.country": "Country",
-  
+
   // Countries
   "country.korea": "Korea",
   "country.us": "United States",
-  
+
   // Languages
   "lang.ko": "한국어",
   "lang.en": "English",
   "lang.zh": "中文",
-  
+
   // Search
   "search.placeholder": "Search trademark name...",
   "search.button": "Search",
@@ -25,7 +26,7 @@ export default {
   "search.startDate": "Start Date",
   "search.endDate": "End Date",
   "search.applyFilters": "Apply Filters",
-  
+
   // Status
   "status.registered": "Registered",
   "status.underExamination": "Under Examination",
@@ -34,7 +35,7 @@ export default {
   "status.cancelled": "Cancelled",
   "status.expired": "Expired",
   "status.all": "All Status",
-  
+
   // Results
   "results.title": "Search Results",
   "results.count": "{{count}} results found",
@@ -45,7 +46,7 @@ export default {
   "results.loadMore": "Load More",
   "results.noResults": "No trademarks found",
   "results.noResultsDesc": "Try adjusting your search criteria or filters",
-  
+
   // Detail
   "detail.title": "Trademark Details",
   "detail.basicInfo": "Basic Information",
@@ -66,20 +67,21 @@ export default {
   "detail.publicationNumber": "Publication Number",
   "detail.usClassCodes": "US Class Codes",
   "detail.close": "Close",
-  
+
   // Favorites
   "favorites.title": "My Favorites",
   "favorites.empty": "No favorites yet",
-  "favorites.emptyDesc": "Start adding trademarks to your favorites by clicking the heart icon",
+  "favorites.emptyDesc":
+    "Start adding trademarks to your favorites by clicking the heart icon",
   "favorites.remove": "Remove from favorites",
   "favorites.add": "Add to favorites",
-  
+
   // States
   "loading.message": "Loading trademarks...",
   "error.title": "Something went wrong",
   "error.message": "Unable to load trademarks. Please try again later.",
   "error.retry": "Retry",
-  
+
   // Common
   "common.save": "Save",
   "common.cancel": "Cancel",
